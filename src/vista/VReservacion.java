@@ -33,9 +33,19 @@ public class VReservacion extends javax.swing.JDialog {
         txtClave = new javax.swing.JTextField();
         btnNuevo = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtClaveD = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         boxAcademia = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        txtClaveM = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtHorarioS = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtHorarioE = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtNumeroL = new javax.swing.JTextField();
         panelVertDerecho = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -60,7 +70,7 @@ public class VReservacion extends javax.swing.JDialog {
 
         lblTitulo.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(98, 17, 50));
-        lblTitulo.setText("OPERACIONES PARA LAS MATERIAS");
+        lblTitulo.setText("OPERACIONES PARA LAS RESERVACION");
         panelEncabezado.add(lblTitulo);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,7 +96,7 @@ public class VReservacion extends javax.swing.JDialog {
 
         jLabel8.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(98, 17, 50));
-        jLabel8.setText("Clave de la materia:");
+        jLabel8.setText("Clave de la Reservacion:");
 
         btnBuscar.setFont(new java.awt.Font("Open Sans", 0, 16)); // NOI18N
         btnBuscar.setText("Buscar");
@@ -100,9 +110,9 @@ public class VReservacion extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(panelBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelBusquedaLayout.createSequentialGroup()
-                        .addGap(0, 74, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lblInfo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelBusquedaLayout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -169,9 +179,14 @@ public class VReservacion extends javax.swing.JDialog {
 
         jLabel10.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(98, 17, 50));
-        jLabel10.setText("Clave");
+        jLabel10.setText("Clave De La Reservacion");
 
         txtClave.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        txtClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClaveActionPerformed(evt);
+            }
+        });
 
         btnNuevo.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnNuevo.setText("Nuevo");
@@ -179,9 +194,9 @@ public class VReservacion extends javax.swing.JDialog {
 
         jLabel11.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(98, 17, 50));
-        jLabel11.setText("Nombre");
+        jLabel11.setText("Clave De Docentes");
 
-        txtNombre.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        txtClaveD.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(98, 17, 50));
@@ -190,46 +205,126 @@ public class VReservacion extends javax.swing.JDialog {
         boxAcademia.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
         boxAcademia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel12.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(98, 17, 50));
+        jLabel12.setText("Fecha De Reservacion");
+
+        txtFecha.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+
+        jLabel14.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(98, 17, 50));
+        jLabel14.setText("Numero De Laboratorio");
+
+        txtClaveM.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+
+        jLabel15.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(98, 17, 50));
+        jLabel15.setText("Horario Salida");
+
+        txtHorarioS.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(98, 17, 50));
+        jLabel16.setText("Horario Entrega");
+
+        txtHorarioE.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(98, 17, 50));
+        jLabel17.setText("Clave De La Materia");
+
+        txtNumeroL.setFont(new java.awt.Font("Open Sans", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout panelDetallesLayout = new javax.swing.GroupLayout(panelDetalles);
         panelDetalles.setLayout(panelDetallesLayout);
         panelDetallesLayout.setHorizontalGroup(
             panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDetallesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDetallesLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNuevo))
                     .addGroup(panelDetallesLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombre)
-                            .addComponent(boxAcademia, 0, 300, Short.MAX_VALUE)
-                            .addComponent(txtClave))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(panelDetallesLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtClaveD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelDetallesLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(panelDetallesLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtHorarioS, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelDetallesLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtHorarioE, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDetallesLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDetallesLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnNuevo))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDetallesLayout.createSequentialGroup()
+                                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel17))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtClaveM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumeroL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(panelDetallesLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(boxAcademia, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         panelDetallesLayout.setVerticalGroup(
             panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDetallesLayout.createSequentialGroup()
                 .addComponent(btnNuevo)
-                .addGap(32, 32, 32)
+                .addGap(4, 4, 4)
                 .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtClaveD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(boxAcademia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 150, Short.MAX_VALUE))
+                    .addComponent(jLabel15)
+                    .addComponent(txtHorarioS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDetallesLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel17))
+                    .addGroup(panelDetallesLayout.createSequentialGroup()
+                        .addComponent(txtHorarioE, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtClaveM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDetallesLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(panelDetallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(txtNumeroL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel13))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDetallesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxAcademia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout panelVertIzquierdoLayout = new javax.swing.GroupLayout(panelVertIzquierdo);
@@ -289,7 +384,7 @@ public class VReservacion extends javax.swing.JDialog {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -301,7 +396,7 @@ public class VReservacion extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -311,14 +406,14 @@ public class VReservacion extends javax.swing.JDialog {
             panelVertDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVertDerechoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelVertDerechoLayout.setVerticalGroup(
             panelVertDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVertDerechoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -369,6 +464,10 @@ public class VReservacion extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClaveActionPerformed
       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -382,7 +481,12 @@ public class VReservacion extends javax.swing.JDialog {
     private javax.swing.JMenuItem itemSalir;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel7;
@@ -405,6 +509,11 @@ public class VReservacion extends javax.swing.JDialog {
     public javax.swing.JTable tblRegistros;
     public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtClave;
-    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtClaveD;
+    public javax.swing.JTextField txtClaveM;
+    public javax.swing.JTextField txtFecha;
+    public javax.swing.JTextField txtHorarioE;
+    public javax.swing.JTextField txtHorarioS;
+    public javax.swing.JTextField txtNumeroL;
     // End of variables declaration//GEN-END:variables
 }
